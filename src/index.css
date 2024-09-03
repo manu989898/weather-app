@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.weather-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;  /* Ajusta según lo necesario */
+    margin-top: 20px;  /* Ajusta o elimina según sea necesario */
+    padding: 0;  /* Elimina cualquier padding extra */
+  }
+  .weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .weather-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .weather-detail span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  
+  .weather-icon {
+    margin: 0;  /* Asegúrate de que no haya margen adicional */
+    padding: 0;  /* Asegúrate de que no haya padding adicional */
+  }
+  
+  
+  .spin {
+    animation: spin 10s linear infinite;
+  }
+  
+  .move-cloud {
+    animation: moveClouds 15s linear infinite;
+  }
+  
+  .falling-rain {
+    animation: rainDrop 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes moveClouds {
+    0% { transform: translateX(-50px); }
+    100% { transform: translateX(50px); }
+  }
+  
+  @keyframes rainDrop {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+  }
+  
