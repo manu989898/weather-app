@@ -1,0 +1,18 @@
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .weather-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .weather-detail span {
+    font-size: 16px;
+    color: #333;
+  }
+  

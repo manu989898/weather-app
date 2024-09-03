@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { WiDaySunny, WiCloud, WiRain, WiStrongWind, WiRaindrop, WiBarometer, WiThermometer  } from 'react-icons/wi';
+import { WiDaySunny, WiCloud, WiRain, WiStrongWind, WiRaindrop, WiBarometer, WiThermometer } from 'react-icons/wi';
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -28,10 +28,6 @@ const Weather = () => {
       setWeatherData(null);
     }
   };
-
- 
-
-  
 
   const getWeatherIcon = () => {
     if (!weatherData) return null;
@@ -64,7 +60,6 @@ const Weather = () => {
     }
   };
   
-  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-lg mx-auto p-8 bg-white rounded-3xl shadow-lg">
@@ -91,13 +86,25 @@ const Weather = () => {
           <div className="mt-8 text-center">
             {getWeatherIcon()}
             <h2 className="text-4xl font-semibold mt-4 text-gray-900">{weatherData.name}</h2>
-            <p className="text-6xl font-light text-gray-800 mt-2">{weatherData.main.temp}°C</p>
+            <p className="text-6xl font-light text-gray-800 mt-2 font-medium">{weatherData.main.temp}°C</p>
             <p className="text-lg text-gray-600 mt-1 capitalize">{weatherData.weather[0].description}</p>
-            <div className="mt-6 text-left text-gray-600">
-              <p>Wind Speed: {weatherData.wind.speed} m/s</p>
-              <p>Humidity: {weatherData.main.humidity}%</p>
-              <p>Pressure: {weatherData.main.pressure} hPa</p>
-              <p>Feels Like: {weatherData.main.feels_like}°C</p>
+            <div className="mt-6 text-left text-gray-600 weather-details">
+              <div className="weather-detail">
+                <WiStrongWind size={24} className="text-blue-500" />
+                <span>Wind Speed: {weatherData.wind.speed} m/s</span>
+              </div>
+              <div className="weather-detail">
+                <WiRaindrop size={24} className="text-blue-500" />
+                <span>Humidity: {weatherData.main.humidity}%</span>
+              </div>
+              <div className="weather-detail">
+                <WiBarometer size={24} className="text-blue-500" />
+                <span>Pressure: {weatherData.main.pressure} hPa</span>
+              </div>
+              <div className="weather-detail">
+                <WiThermometer size={24} className="text-blue-500" />
+                <span>Feels Like: {weatherData.main.feels_like}°C</span>
+              </div>
             </div>
           </div>
         )}
